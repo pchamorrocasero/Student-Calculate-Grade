@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Student Grade Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Student Grade Calculator</h2>
+    <label>Student Name: <input type="text" id="studentName"></label>
+    <br>
+    <br>
+    <div id="subjects">
+        <label>P/E: <input type="number" class="grade" min="0" max="100"></label>
+        <label>MATH: <input type="number" class="grade" min="0" max="100"></label>
+        <label>SCIENCE: <input type="number" class="grade" min="0" max="100"></label>
+        <label>SOCIAL SCIENCE: <input type="number" class="grade" min="0" max="100"></label>
+        <label>ENGLISH: <input type="number" class="grade" min="0" max="100"></label>
+        <label>SPANISH: <input type="number" class="grade" min="0" max="100"></label>
+    </div>
+    <br>
+    <button onclick="addStudent()">Add Student</button>
+    <h3>Class Grades</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Percentage</th>
+                <th>GPA</th>
+                <th>GPA Letter</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="studentTable"></tbody>
+    </table>
+    <h3>Class Average Percentage: <span id="classAverage">0%</span></h3>
+    <script src="script.js"></script>
+</body>
+</html>
