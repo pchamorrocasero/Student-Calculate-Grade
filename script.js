@@ -6,9 +6,8 @@ function addStudent() {
     let percentage = total / grades.length;
     let gpa = calculateGPA(percentage);
     let letterGrade = getLetterGrade(percentage);
-    let totalGrades = scores.reduce((acc, val) => acc + val, 0);
     students.push({ name, percentage });
-    updateTable(name, percentage, gpa, letterGrade);
+    updateTable(name, percentage, gpa, letterGrade, total);
     updateClassAverage();
 }
 function calculateGPA(percentage) {
@@ -22,9 +21,9 @@ function getLetterGrade(percentage) {
     if (percentage >= 60) return 'D';
     return 'F';
 }
-function updateTable(name, percentage, gpa, letterGrade) {
+function updateTable(name, percentage, gpa, letterGrade, total) {
     let table = document.getElementById('studentTable');
-    let row = `<tr><td>${name}</td><td>${percentage.toFixed(2)}%</td><td>${gpa}</td><td>${letterGrade}</td></tr>`;
+    let row = `<tr><td>${name}</td><td>${percentage.toFixed(2)}%</td><td>${gpa}</td><td>${letterGrade}</td><td>${total.toFixed(2)}</td></tr>`;
     table.innerHTML += row;
 }
 function updateClassAverage() {
